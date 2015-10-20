@@ -3,12 +3,12 @@
 namespace Ez\Util;
 
 /**
- * Class PairsToArray
+ * Class PairsToArrayParser
  *
  * @package Ez\Util
  * @author Derek Li
  */
-class PairsToArray
+class PairsToArrayParser
 {
     /**
      * Delimiter used in the keys of pairs.
