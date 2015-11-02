@@ -143,8 +143,6 @@ class AttrAccessor
 
     /**
      * Get the value of the attribute.
-     * If the default value is passed and the attribute has not been assigned any value,
-     * assign the given default value to the attribute and return that value.
      *
      * @param $attrName
      * @return mixed
@@ -152,8 +150,10 @@ class AttrAccessor
      */
     public function getAttr($attrName)
     {
-        if ($this->isAttrRegistered($attrName) && $this->isAttrAccessed($attrName)) {
-            return $this->attrsCollection[$attrName];
+        if ($this->isAttrRegistered($attrName)) {
+            if ($this->isAttrAccessed($attrName)) {
+                return $this->attrsCollection[$attrName];
+            }
         } else {
             throw new AttributeNotRegisteredException($attrName);
         }
